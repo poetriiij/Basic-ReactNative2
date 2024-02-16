@@ -1,22 +1,30 @@
 import React from 'react';
-import {TextInput,StyleSheet} from 'react-native';
+import {View, Text, Image, StyleSheet, TextInput} from 'react-native';
 
-const Input = () => {
+const Input = ({placeholder, text}) => {
     return (
-        <TextInput
-        placeholder='Masukkan nama anda'
-        style={style.input}
-        />
-    )
+        <View>
+          <Text style={style.text}> {text}  </Text>
+            <TextInput placeholder={placeholder} style={style.input} />
+        </View>
+    );
 };
-
+  
 const style = StyleSheet.create({
     input: {
-        borderWidth: 125,
-        margin: 20,
-        padding: 90,
-        borderRadius: 'center',
+      borderWidth: 1,
+      margin: 20,
+      padding: 10,
+      borderRadius: 10,
     },
+    text: {
+      fontSize: 20,
+        paddingLeft: 20,
+        fontWeight: 'bold',
+        color: 'black',
+        lineHeight: 25,
+        fontFamily: 'Helvetica Neue',
+    }
 });
 
 export default Input;
